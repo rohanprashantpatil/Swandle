@@ -1,0 +1,51 @@
+
+This program is an open source program which uses third party products WinSCP and plink.
+This program also needs Visual C++ Redistributable. (Normally included in windows new versions.)
+
+Swandle is a server handler. You can save connections, create saved commands and use them like a funtion on connection.
+You can even connect from a previous connection using the jcon command.
+
+To start, run swandle.bat
+
+I will list the commands and write their overview and then some sample examples.
+
+You just need to put the command and then press enter.
+
+create
+  It is used to create permanent connection and jcon files.
+  It will prompt you to put input. Type connection or jcon as per requirement. 
+(Please be carefull while typing. Spelling mistake can make many problems and they are difficult to trace.)
+
+connection
+  You can directly use connection as a command, but it will not create a permanent connection.
+  You can put 'define' at any place of connection when you want to define it everytime.
+(No command or input contain apostropee.)
+  Note that you cannot use define in jcon files.
+
+cspect
+  Cspect is used to create saved commands file for connections. You will need jcon to connect them.
+  When it asks you to input 'Send', it means the command you want to send.
+  If you put 'delay' in the 'Send' input, you can set delays.
+  When you want to end the file, just put endfile in send input.
+  You can put 'expcm' in send input to add a command.(The command here means a custum command which
+                                                        is not sent to the remote computer.)
+
+jcon
+  Jcon is used to connect many cspect files and connections. The name comes from join connections and commands.
+  It will first ask you a connection. Then it will ask you file type.
+  You can create any number of file types as you want. Just put a folder with the name of file type.
+  (Do not use plurals)
+  The type connection is an integral part of the program.
+  These file type are basically a segreagated form of different cspect files.
+
+jrun
+  Jrun is used to start a jcon file. It also defines the delay in the commands and inputs.
+
+In any part, Delay input means the amount of delay between commands.
+The delay works on the basis of time period required to ping localhost (i.e. yourself)
+So, while putting delays, think about connection speed and the time period requied to ping yourself
+only once. Default delay is 2. You can put the field empty if delay as 2 suits you.
+
+NOTE: I am not responsible for any damage caused by this program. Any person can edit it and develop it.
+
+
