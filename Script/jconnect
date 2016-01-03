@@ -1,0 +1,29 @@
+
+
+cd %dire%\Script
+
+IF %protocol% EQU telnet (
+  start "" /B plink -telnet -P %port% %host%
+)
+IF %protocol% EQU ssh (
+  start "" /B plink -ssh -P %port% %host%
+)
+IF %protocol% EQU ftp (
+  start "" /B winscp ftp://%host%
+)
+IF %protocol% EQU sftp (
+  start "" /B winscp sftp://%host%
+)
+
+set /P "=" < NUL
+ping -n %wait% -w 1 127.0.0.1 > NUL
+%SendKeys% "%user%{ENTER}"
+
+set /P "=" < NUL
+ping -n %wait% -w 1 127.0.0.1 > NUL
+%SendKeys% "%pass%{ENTER}"
+
+
+
+
+
