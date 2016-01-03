@@ -1,4 +1,6 @@
 
+I was not able to put plink and winscp. Copy them from their official website and put them in Script folder
+
 This program is an open source program which uses third party products WinSCP and plink.
 This program also needs Visual C++ Redistributable. (Normally included in windows new versions.)
 
