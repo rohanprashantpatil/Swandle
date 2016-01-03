@@ -1,0 +1,30 @@
+
+
+IF %protocol% EQU telnet (
+  set /P "=" < NUL
+  ping -n %wait% -w 1 127.0.0.1 > NUL
+  %SendKeys% "telnet %host% %port%{ENTER}"
+
+  set /P "=" < NUL
+  ping -n %wait% -w 1 127.0.0.1 > NUL
+  %SendKeys% "%user%{ENTER}"
+
+  set /P "=" < NUL
+  ping -n %wait% -w 1 127.0.0.1 > NUL
+  %SendKeys% "%pass%{ENTER}"
+
+
+)
+
+IF %protocol% EQU ssh (
+  set /P "=" < NUL
+  ping -n %wait% -w 1 127.0.0.1 > NUL
+  %SendKeys% "ssh -P %port% %user%@%host% {ENTER}"
+
+  set /P "=" < NUL
+  ping -n %wait% -w 1 127.0.0.1 > NUL
+  %SendKeys% "%pass%{ENTER}"
+
+)
+
+
