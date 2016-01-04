@@ -1,13 +1,13 @@
+Swandle is a server handler. You can save connections, create saved commands and use them like a funtion on connection.
+You can even connect from a previous connection using the jcon command. It is program which can be used to create macros 
+for different third party programs other than the one which are default.
 
-I was not able to put plink and winscp. Copy them from their official website and put them in Script folder
+To start, run swandle.bat
 
+You will have to download plnk and winscp and put them in script folder.
 This program is an open source program which uses third party products WinSCP and plink.
 This program also needs Visual C++ Redistributable. (Normally included in windows new versions.)
 
-Swandle is a server handler. You can save connections, create saved commands and use them like a funtion on connection.
-You can even connect from a previous connection using the jcon command.
-
-To start, run swandle.bat
 
 I will list the commands and write their overview and then some sample examples.
 
@@ -39,6 +39,7 @@ jcon
   (Do not use plurals)
   The type connection is an integral part of the program.
   These file type are basically a segreagated form of different cspect files.
+  You can even join a jcon file with a jcon file.
 
 jrun
   Jrun is used to start a jcon file. It also defines the delay in the commands and inputs.
@@ -48,6 +49,29 @@ The delay works on the basis of time period required to ping localhost (i.e. you
 So, while putting delays, think about connection speed and the time period requied to ping yourself
 only once. Default delay is 2. You can put the field empty if delay as 2 suits you.
 
-NOTE: I am not responsible for any damage caused by this program. Any person can edit it and develop it.
+compile
+  Compile command compiles a directly made cspect file.
+
+NOTE: Don't use file names such as tmp, jtmp, null, put capital letter. Don't use inputs like these. Also, you cannot use
+      the symbol '>' or '<'. You will have to manually edit them. Do not use commands with capital letters.
+
+	These things are just precompiled things. Using cspect and jcon, you can use any third party program.(Should be
+command type or you will have to make it work. After all, it works on keyboard buffer.) You can use the following
+command to start other programs
+
+start "" /B directory/program.exe parameters
+
+You can even use preset variables like %dire% which is a path variable. While using cspect, you can even input preset
+variables. Using expcm command, you can set variables. Just put them before starting a program. To make program put variables
+just put %variable_name% in send input.
+
+You can set variable by
+set variable_name=variable_value
+You can make it as you a value by just putting /P flag after set. In place of variable_value, you can put the text you
+want to see when youput the input.
+
+You can create a whole new protocol by amking suitable changes in connect and jconnect.
+
+
 
 
